@@ -21,4 +21,7 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist.
 
+
+https://abbasiafnan9.github.io/Day-Planner/
+
 ![ss3](https://user-images.githubusercontent.com/86696292/135541741-197b2767-ab00-485f-861b-a7586768f787.PNG)
