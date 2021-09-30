@@ -15,7 +15,7 @@ textarea {
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: #5065e8 ;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -57,15 +57,32 @@ textarea {
   color: white;
 }
 
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+
+
+                                                                                                         /* Styling all the id's */
+
+#four{
+background-color: brown;
+color: white;
+}
+
+#five{
+  background-color: coral;
   color: white;
 }
 
-.saveBtn i:hover {
+
+#saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: aqua;
+  color: white;
+  margin-left: 850px;
+ 
+}
+
+#saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
