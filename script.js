@@ -1,59 +1,47 @@
+var currentday = $('#currentDay');
+var scheduleDisplayEl = $('#scheduleDisplay')
+var hour = $('.hour');
+var h9 = $('#9');
+var h9 = $('#10');
+var h9 = $('#11');
+var h9 = $('#12');
+var h9 = $('#13');
+var h9 = $('#14');
+var h9 = $('#15');
+var h9 = $('#16');
+var h9 = $('#17');
+var saveBtn = $('.saveBtn');
 
-                                                             //  For displaying current date on the header
+var currentDay = moment();
+$("#currentDay").text(currentDay.format("MMM Do, YYYY"));
 
-$(document).ready(function () {
-    var reformatDate = moment().format("dddd, MMMM Do YYYY, H:mm a");
-    $("#currentDay").text(reformatDate);
-    
-    var currentHour = (new Date()).getHours(); 
-    
-   
-                                                               // Saving text content to local storage
+var time = moment().format("H");
 
-    let calendarEventLocalString = localStorage.getItem("calendarEventLocal");
-    let calanderEventData;
-    if (calendarEventLocalString === null) {
-        calanderEventData = {};
-        localStorage.setItem("calendarEventLocal", JSON.stringify(calanderEventData));
-    } else {
-        calanderEventData = JSON.parse(calendarEventLocalString);
+function tasks() {
+  for (let i = 9; i <= 17; i++) {
+      var getTask = localStorage.getItem(i);
+      $('#' + i).val(getTask);
+  }
+}
+
+function color() {
+    for (let hour = 9; hour <= 17; hour++) {
+        console.log(hour)
+        if (hour == time) {
+            $("#" + hour).addClass("present");
+        } else if (hour < time) {
+            $("#" + hour).addClass("past")
+        } else if (hour > time) {
+            $("#" + hour).addClass("future")
+        }
     }
-    
-    $('.container textarea').each(function(){
-        if($(this).data('hour') < currentHour) {  
-                    // PAST
-            $(this).addClass("past"); 
-        } else if($(this).data('hour') == currentHour) { 
-                    //  PRESENT
-            $(this).addClass("present"); 
-        } else {  
-                    // FUTURE
-            $(this).addClass("future"); 
-        } 
-        $(this).val(calanderEventData[$(this).data('hour')]);
-    }) 
-    
-    $('.container button').each(function(){
-       $(this).click(saveEvent);
-    })
-    
-    function saveEvent() {
-       
-        let textInput = $(this).siblings('textarea')
-        let hour = textInput.data('hour');
-        calanderEventData[hour] = textInput.val();
-        localStorage.setItem("calendarEventLocal", JSON.stringify(calanderEventData));
-    }
-    
-    
-    function resetCalender(){
-        localStorage.clear();
-        $('.container textarea').each(function(){
-            $(this).val('');
-        }) 
-    };
-    
-    $('#reset').click(resetCalender);
-    
-    
-    })
+}
+
+color();
+tasks();
+
+saveBtn.click(function(event) {
+  var task = $(event.target).prev().val();
+  var hourID = $(event.target).prev().attr("id")
+  localStorage.setItem(hourID, task)
+})
