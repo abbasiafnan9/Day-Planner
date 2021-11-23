@@ -24,4 +24,5 @@ THEN the saved events persist.
 
 https://abbasiafnan9.github.io/Day-Planner/
 
-![ss3](https://user-images.githubusercontent.com/86696292/135541741-197b2767-ab00-485f-861b-a7586768f787.PNG)
+
+![day planner](https://user-images.githubusercontent.com/86696292/143084746-33ed886c-659e-4661-a3f7-55831522635c.PNG)
