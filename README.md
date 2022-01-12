@@ -1,11 +1,11 @@
 # Day-Planner
 
-Using HTML/CSS/Javascript display a daily planner that uses localStorage to keep hourly tasks.
+### Using HTML/CSS/Javascript display a daily planner that uses localStorage to keep hourly tasks.
 
 
 
 
-ACCEPTANCE CRITERIA
+## ACCEPTANCE CRITERIA
 
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
